@@ -1,0 +1,26 @@
+{% extends 'default.html' %}
+
+
+
+
+{% block content %}
+{% block title %}
+<h2>Список категорий</h2>
+{% endblock title %}
+
+
+{% for category in categories %}
+<div class="row">
+    <div class="col-sm-6">
+        <ul class="list-unstyled mb-0">
+            <li>
+                <a href="/category/{{category.id}}">
+                    <h4>{{ category.name }}</h4>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+{% endfor %}
+<br>
+{% endblock content %}
