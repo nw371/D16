@@ -1,12 +1,12 @@
 {% extends 'default.html' %}
-
+{% block content %}
                 <article>
                         <!-- Post header-->
                         <header class="mb-4">
                             <!-- Post title-->
                             <h1 class="fw-bolder mb-1">{{ post.name }}</h1>
                             <!-- Post meta content-->
-                            <div class="text-muted fst-italic mb-2">Posted on {{ post.date|date:'d m Y' }} by {{ post.user.first_name}} {{ post.user.last_name}}</div>
+                            <div class="text-muted fst-italic mb-2">Posted on {{ post.date|date:'d m Y' }} by {{ post.user.username}}</div>
                             <!-- Post categories-->
                             <a class="badge bg-secondary text-decoration-none link-light" href="#!">
                                 {% for i in post.category.values %}
@@ -21,6 +21,7 @@
                             {{ post.body}}
                         </section>
                     </article>
+{% endblock content %}
 <!-- Comments section-->
                     <section class="mb-5">
                         <div class="card bg-light">

@@ -1,11 +1,14 @@
 {% extends 'default.html' %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Создание</title>
-</head>
-<body>
+{% block title %}
+<h2>Добавление публикаций</h2>
+{% endblock title %}
+{% block content %}
 
-</body>
-</html>
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }} <!-- Теперь нам нужна только готовая форма и кнопка -->
+    <br>
+    <input type="submit" value="Добавить публикацию">
+</form>
+<br>
+{% endblock content %}

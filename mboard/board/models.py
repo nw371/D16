@@ -21,7 +21,7 @@ class Post(models.Model):
     # текст статьи/новости
     body = models.TextField(verbose_name='Tекст')
     # связь «один ко многим» с моделью Author
-    author = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name='Автор')
+    user = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name='Пользователь', default=1)
     # связь «многие ко многим» с моделью Category (с дополнительной моделью PostCategory)
     category = models.ManyToManyField(Category, through='PostCategory', verbose_name='Категория')
 

@@ -1,13 +1,11 @@
 {% extends 'default.html' %}
 
-
-
-
-{% block content %}
 {% block title %}
 <h2>Список категорий</h2>
+<br>
 {% endblock title %}
 
+{% block content %}
 
 {% for category in categories %}
 <div class="row">
@@ -22,5 +20,5 @@
     </div>
 </div>
 {% endfor %}
-<br>
+
 {% endblock content %}
