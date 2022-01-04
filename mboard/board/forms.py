@@ -1,6 +1,6 @@
 from django.forms import ModelForm
 
-from .models import Post, User
+from .models import Post
 
 
 # Создаём модельную форму
@@ -15,4 +15,4 @@ class PostForm(ModelForm):
     #     self.fields['user'].queryset = User.objects.filter(id=self.request.user)
     class Meta:
         model = Post
-        fields = ['name', 'body', 'category', 'user']
+        fields = ['name', 'body', 'upload','category', 'author']

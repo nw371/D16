@@ -6,12 +6,10 @@
                             <!-- Post title-->
                             <h1 class="fw-bolder mb-1">{{ post.name }}</h1>
                             <!-- Post meta content-->
-                            <div class="text-muted fst-italic mb-2">Posted on {{ post.date|date:'d m Y' }} by {{ post.user.username}}</div>
+                            <div class="text-muted fst-italic mb-2">Posted on {{ post.date|date:'d m Y' }} by {{ post.author.username}}</div>
                             <!-- Post categories-->
                             <a class="badge bg-secondary text-decoration-none link-light" href="#!">
-                                {% for i in post.category.values %}
-                                {{i.name}}
-                                {% endfor %}
+                                {{post.get_category_display}}
                             </a>
                         </header>
                         <!-- Preview image figure-->
@@ -19,6 +17,7 @@
                         <!-- Post content-->
                         <section class="mb-5">
                             {{ post.body}}
+                            <a href="{{post.upload.url}}">{{post.upload.name}}</a>
                         </section>
                     </article>
 {% endblock content %}
